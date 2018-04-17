@@ -5,12 +5,15 @@ module.exports = {
     path: __dirname + "/dist"
   },
   resolve: {
-    extensions: [".ts", ".tsx"]
+    extensions: [".ts", ".tsx", ".js"]
   },
   module: {
     rules: [
       { test: /\.tsx?$/,
-	      loader: "awesome-typescript-loader" }
+	      loader: "awesome-typescript-loader" },
+      { test: /\.jsx?$/,
+        loader: "babel-loader"
+      }
     ]
   },
   externals: {

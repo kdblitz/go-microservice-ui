@@ -19,7 +19,7 @@ export class EventListContainer extends React.Component<EventListContainerProps,
             events: []
         };
 
-        fetch(p.eventListUrl)
+        fetch(p.eventListUrl + "/events", {method: "GET"})
             .then<Event[]>(response => response.json())
             .then(events => {
                 this.setState({
